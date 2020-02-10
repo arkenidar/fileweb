@@ -1,9 +1,9 @@
 <?php
-$filename="comments";
-$path="$filename.json";
 
-$tmp = fopen($path, 'rb');
-@flock($tmp, LOCK_SH);
+// not used directly, but included
+
+$filename="comments";
+$path="$filename.db.json";
 
 $contents = file_get_contents($path);
 
@@ -13,6 +13,3 @@ foreach($array as $item){
 $name=$item[0]; $says=$item[1];
 echo htmlspecialchars("$name says $says")."<br>\n";
 }
-
-@flock($tmp, LOCK_UN);
-fclose($tmp);

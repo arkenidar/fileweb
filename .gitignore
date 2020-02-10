@@ -1,0 +1,5 @@
+*.out.html
+*.db.json
+*.db.json.lockfile
+
+launch.json
